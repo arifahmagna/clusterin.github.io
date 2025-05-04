@@ -1,0 +1,140 @@
+/*copy code color palette figma pake root*/
+:root {
+    --white: #FFFFFF;
+    --abutulisan: #65625F;
+    --blacktulisan: #65625F;
+    --blackbg: #03081F;
+    --biruBG1: #26374D;
+    --biruBG2: #DDE6ED;
+    --navy: #26374D;
+    --biruabu: #536D82;
+    --anotherblck: #000000;
+    --orange: #FC8A06;
+    --red: #E50014E5;
+    --ijobubble: #19CA4E;
+    --abububble: #C4C4C4;
+    --purpleprofile: #D2DAFF;
+    --pinkprofile: #FFC0DE;
+    --merahprofile: #DA4747DB;
+    --bluetext: #2951D5;
+    --pinkbubble: #DA4790DB;
+    --abubayangan: #53525299;
+    --fwbold: 700;
+    --fwlight: 400;
+    --fwmedium: 600;
+    --fwreguler: 500;
+    --fwsuperlight: 300;
+
+}
+
+/*semua font di body akan menjadi Nunito*/
+body {
+    font-family: "Nunito", sans-serif;
+    color: var(--white);
+    background: var(--biruBG1);
+}
+
+body.bg {
+    background: var(--biruBG2);
+    font-family: "Nunito", sans-serif;
+    color: var(--white);
+}
+
+.header {
+    font-weight: var(--fwbold);
+    font-size: 30px;
+    margin: 0;
+    color: var(--white);
+}
+
+.header-2 {
+    font-weight: var(--fwbold);
+    font-size: 24px;
+    margin: 0;
+    color: var(--white);
+}
+
+.header-3 {
+    font-weight: var(--fwmedium);
+    font-size: 17px;
+    margin: 0;
+    color: var(--navy);
+
+}
+
+.paragraf-mini {
+    font-weight: var(--fwbold);
+    font-size: 14px;
+    color: white;
+
+    margin: 0;
+}
+
+.paragraf-medium {
+    font-weight: var(--fwbold);
+    font-size: 16px;
+    color: white;
+    margin: 0;
+}
+
+.paragraf-semiMini {
+    font-weight: var(--fwmedium);
+    font-size: 16px;
+
+}
+
+.btn-primary {
+    padding: 10px 40px 10px 40px;
+    background: var(--white);
+    color: var(--abububble);
+    font-size: 18px;
+    font-weight: var(--fwlight);
+    border: none;
+    border-radius: 16px;
+}
+
+.card-header {
+    font-family: "Poppins", sans-serif;
+    background: var(--biruBG1);
+    font-size: 13px;
+    font-weight: var(--fwbold);
+    color: var(--white);
+
+}
+
+.card-title {
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: var(--fwmedium);
+    color: var(--navy);
+}
+
+.card-text {
+    font-family: "Poppins", sans-serif;
+    font-weight: var(--fwlight);
+    color: var(--navy);
+}
+
+.badge-status {
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    color: white;
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 5px;
+    background: var(--biruabu);
+}
+
+.circle-number {
+    width: 28px;
+    height: 28px;
+    background-color: #f0f0f0;
+    /* bisa diganti warna lain */
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
