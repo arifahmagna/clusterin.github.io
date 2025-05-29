@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profile: Informasi Keluarga</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+
+</head>
+
+
+<body>
+     <!--tampilan view-->
+    <div id="view-mode">
+        <div class="container text-center pt-1 pb-2"
+            style="background: var(--biruBG1); font-weight: var(--fwbold);  font-size: 24px; border-radius: 0 0 10px 10px;">
+            <div class="row align-items-center justify-content-center mt-3 ">
+                Informasi Keluarga
+            </div>
+        </div>
+
+        <div class="container mb-2 pb-2 mt-4" width="50">
+            <div class="card" style="background: white; color: #26374D">
+                <div class="card-body">
+                    <div class="header-3 mb-3" style="font-weight: var(--fwbold);">Informasi Identitas & Kependudukan
+                    </div>
+                    <div class="mb-2 row">
+                        <label for="kepala_keluarga" class="col-sm-2 col-form-label">Kepala Keluarga</label>
+                        <div class="col-sm-10">
+                            <input type="text" readonly class="form-control-plaintext" id="kepala_keluarga"
+                                value="Kim Jong In" style="font-weight: var(--fwbold);">
+                        </div>
+                    </div>
+                    <div class="mb-2 row">
+                        <label for="jumlahAnggotaKel" class="col-sm-2 col-form-label">Jumlah Anggota Keluarga</label>
+                        <div class="col-sm-10">
+                            <input type="number" readonly class="form-control-plaintext" id="jumlahAnggotaKel" value="4"
+                                style="font-weight: var(--fwbold);">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mb-2 pb-2 mt-4" width="50 ">
+            <div class="card" style="color: var(--biruBG1)">
+                <div class="card-body">
+                    <p class="header-3 mb-3" style="color: var(--biruBG1);  font-weight: var(--fwbold);">
+                        Anggota
+                        Keluarga 3</p>
+                    <div class="row mb-1">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Nama</label>
+                        <div class="col-sm-7 mb-2">
+                            <input type="text" class="form-control-plaintext" style="font-weight: var(--fwbold);"
+                                id="nama" value="Aburizal Pratama" readonly>
+                        </div>
+                    </div>
+                    <div class="row mb-1">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Hubungan Keluarga</label>
+                        <div class="col-sm-7 mb-2">
+                            <input type="text" class="form-control-plaintext" style="font-weight: var(--fwbold);"
+                                id="hubungan" value="Istri" readonly>
+                        </div>
+                    </div>
+                    <div class="row mb-1">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Tanggal Lahir</label>
+                        <div class="col-sm-7 mb-2">
+                            <input type="date" class="form-control-plaintext" style="font-weight: var(--fwbold);"
+                                id="tanggal lahir"  readonly>
+                        </div>
+                    </div>
+                    <div class="row mb-1">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">NIK</label>
+                        <div class="col-sm-7 mb-2">
+                            <input type="text" class="form-control-plaintext" style="font-weight: var(--fwbold);"
+                                id="NIK " value="1849204661" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button onclick="showEdit2()" type=" submit" class="btn btn-edit mb-3 mt-5">Edit</button>
+            <a href="profile.html" style="text-decoration: none; color: inherit;">
+                <button type="submit" class="btn btn-edit mb-3"
+                    style="background-color: transparent !important;">Kembali</button></a>
+        </div>
+    </div>
+
+    <!--tampilan edit-->
+    <div id="edit-mode" style="display: none">
+        <!--card utama keluagra-->
+        <div class="container text-center pt-1 pb-2"
+            style="background: var(--biruBG1); font-weight: var(--fwbold);  font-size: 24px; border-radius: 0 0 10px 10px;">
+            <div class="row align-items-center justify-content-center mt-3 ">
+                Edit Informasi Keluarga
+            </div>
+        </div>
+        <div class="container mb-2 pb-2 mt-4" width="50">
+            <div class="card" style="background: white; color: #26374D">
+                <div class="card-body">
+                    <div class="header-3 mb-3" style="font-weight: var(--fwbold);">Informasi Identitas & Kependudukan
+                    </div>
+                    <div class="mb-2 row">
+                        <label for="kepala_keluarga" class="col-sm-2 col-form-label">Kepala Keluarga</label>
+                        <div class="col-sm-10">
+                            <input type="text"  class="form-control" id="kepala_keluarga"
+                                value="Kim Jong In" style="font-weight: var(--fwbold);background: #D9D9D9;" placeholder="Masukkan kepala keluarga">
+                        </div>
+                    </div>
+                    <div class="mb-2 row">
+                        <label for="jumlahAnggotaKel" class="col-sm-2 col-form-label">Jumlah Anggota Keluarga</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="jumlahAnggotaKel" 
+                                style="font-weight: var(--fwbold); background: #D9D9D9;" placeholder="Masukkan jumlah keluarga">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--card anggota keluarga-->
+        <div class="container mb-2 pb-2 mt-4" width="50 ">
+            <div class="card" style="color: var(--biruBG1)">
+                <div class="card-body">
+                    <p class="header-3 mb-3" style="color: var(--biruBG1);  font-weight: var(--fwbold); ">
+                        Anggota
+                        Keluarga 3</p>
+                    <div class="row mb-1">
+                        <label for="nama2" class="col-sm-2 col-form-label">Nama</label>
+                        <div class="col-sm-10 mb-2">
+                            <input type="text" class="form-control" style="font-weight: var(--fwbold); background: #D9D9D9;"
+                                id="nama2" value="Aburizal Pratama" placeholder="Masukkan nama lengkap">
+                        </div>
+                    </div>
+                    <div class="row mb-1">
+                        <label for="hubungan2" class="col-sm-2 col-form-label">Hubungan Keluarga</label>
+                        <div class="col-sm-10 mb-2">
+                            <input type="text" class="form-control" style="font-weight: var(--fwbold); background: #D9D9D9;"
+                                id="hubungan2" value="Istri" placeholder="Ibu/Ayah/Anak/dll" >
+                        </div>
+                    </div>
+                    <div class="row mb-1">
+                        <label for="tanggal_lahir2" class="col-sm-2 col-form-label">Tanggal Lahir</label>
+                        <div class="col-sm-10 mb-2">
+                            <input type="date" class="form-control" style="font-weight: var(--fwbold); background: #D9D9D9;"
+                                id="tanggal_lahir2"  placeholder="Masukkan tanggal lahir" >
+                        </div>
+                    </div>
+                    <div class="row mb-1">
+                        <label for="NIK2" class="col-sm-2 col-form-label">NIK</label>
+                        <div class="col-sm-10 mb-2">
+                            <input type="text" class="form-control" style="font-weight: var(--fwbold); background: #D9D9D9;"
+                                id="NIK2" value="1849204661" placeholder="Masukkan NIK">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-edit mb-3 mt-5" data-bs-toggle="modal"
+                data-bs-target="#modalEditSuccess">Simpan</button>
+            <button onclick="cancelEdit2()" type="submit" class="btn btn-edit mb-3"
+                style="background-color: transparent !important;">Batal</button>
+            <!--ini modal-->
+            <div class="modal fade" id="modalEditSuccess" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="container pb-2">
+                            <div class="d-flex align-items-center justify-content-center"
+                                style="font-size: 6rem; color: var(--biruBG1);">
+                                <i class="bi bi-check-circle-fill text-center"></i>
+                            </div>
+                            <div class="d-flex flex-column justify-content-center align-items-center">
+                                <h5 class="modal-title text-center mb-3"
+                                    style="color: var(--biruBG1); font-weight: var(--fwbold); font-size: 29px; font-family: Poppins, sans-serif;">
+                                    Berhasil</h5>
+                                <p>Perubahan informasi keluarga anda berhasil dilakukan.</p>
+                            </div>
+
+                            <div class="d-grid gap-2 mt-4 mx-3 mb-3 text-center">
+                                <a href="profile.html">
+                                    <button type="button" class="btn btn-yes">Kembali ke profil</button>
+                                </a>
+                                <a href="dashboard.html">
+                                    <button type="button" class="btn btn-no">Kembali ke beranda</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+            
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+        function showEdit2() {
+            document.getElementById('view-mode').style.display = 'none';
+            document.getElementById('edit-mode').style.display = 'block';
+        }
+
+        function cancelEdit2() {
+            document.getElementById('edit-mode').style.display = 'none';
+            document.getElementById('view-mode').style.display = 'block';
+        }
+    </script>
+
+</body>
+
+</html>
