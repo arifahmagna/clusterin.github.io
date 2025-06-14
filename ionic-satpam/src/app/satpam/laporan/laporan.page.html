@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-toolbar  style="--min-height: 80px; --background: #26374D; --color: #ffffff;" class="minmal-toolbar">
+      <ion-title> Laporan </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+<ion-content class="bg-white">
+  <div class="container">
+
+    <!-- Tombol Download -->
+     <div class="laporan-header">
+    <a href="assets/laporan.txt" download>
+  <ion-button expand="block" color="primary">
+    <ion-icon name="download-outline" slot="start"></ion-icon>
+    Download Laporan
+  </ion-button>
+</a>
+</div>
+
+
+    <!-- Tab buttons -->
+    <div class="tabs">
+      <button
+        (click)="switchTab('kunjungan')"
+        [class.active]="selectedTab === 'kunjungan'"
+        class="tab-button"
+      >
+        Kunjungan
+      </button>
+      <button
+        (click)="switchTab('shift')"
+        [class.active]="selectedTab === 'shift'"
+        class="tab-button"
+      >
+        Shift
+      </button>
+    </div>
+
+    <!-- Content -->
+    <section>
+      <app-kunjungan *ngIf="selectedTab === 'kunjungan'"></app-kunjungan>
+      <app-shift *ngIf="selectedTab === 'shift'"></app-shift>
+    </section>
+
+  </div>
+</ion-content>
