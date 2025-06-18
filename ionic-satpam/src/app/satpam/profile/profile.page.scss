@@ -1,0 +1,73 @@
+/* Gaya untuk ion-header */
+ion-header {
+  --background: #26374D; /* Warna latar belakang */
+  --color: #ffffff; /* Warna teks */
+}
+
+
+/* Gaya untuk kartu profil */
+.profile-card {
+  margin: 16px; /* Jarak luar kartu */
+  border-radius: 10px; /* Sudut melengkung */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan */
+}
+
+/* Gaya untuk toolbar dalam kartu profil */
+.toolbar-profile {
+  padding: 16px; /* Padding dalam toolbar */
+}
+
+/* Gaya untuk avatar */
+.img-profile {
+  width: 80px; /* Lebar avatar */
+  height: 80px; /* Tinggi avatar */
+  border-radius: 50%; /* Membuat avatar bulat */
+  overflow: hidden; /* Menghindari gambar keluar dari batas */
+}
+
+/* Gaya untuk bagian informasi profil */
+.profile-info {
+  padding: 16px; /* Padding dalam informasi profil */
+  font-size: 14px; /* Ukuran font */
+  color: #333; /* Warna teks */
+}
+
+/* Gaya untuk tombol upload */
+.btn-upload {
+  margin-top: 8px; /* Jarak atas untuk tombol */
+}
+
+/* Gaya untuk catatan upload */
+.upload-note {
+  font-size: 12px; /* Ukuran font untuk catatan */
+  color: #888; /* Warna teks catatan */
+  text-align: center; /* Pusatkan teks catatan */
+}
+
+/* Gaya untuk tombol edit */
+.btn-info-next {
+  margin: 16px; /* Jarak luar tombol */
+  background-color: #3B82F6; /* Warna latar belakang tombol */
+  color: #ffffff; /* Warna teks tombol */
+  border-radius: 20px; /* Sudut melengkung untuk tombol */
+  font-weight: bold; /* Menebalkan font tombol */
+}
+
+.minmal-toolbar {
+    --min-height: 90px;
+    --background: linear-gradient(135deg, #26374D, #1F2A40);
+    --color: #ffffff;
+    font-weight: bold;
+     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0px 0px 5px 5px;
+
+}
+
+ion-title {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+     margin-top: 1rem;
+     font-weight: bold;
+}

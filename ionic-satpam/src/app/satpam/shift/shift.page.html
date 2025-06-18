@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar style="--min-height: 80px; --background: #26374D; --color: #ffffff;" class="minimal-toolbar">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/tabs/home" aria-label="Kembali ke Beranda">
+        <ion-icon name="chevron-back-circle-outline" slot="icon-only" class="back-icon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Pengaturan Shift</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <div class="container-shift">
+
+    <!-- Tombol Tambah Shift -->
+    <section class="header-section-shift">
+      <ion-button id="addShiftBtn" color="primary" fill="solid" size="small" 
+        (click)="openTambahShiftModal()" aria-label="Tambah Shift Baru">
+        <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+        Tambah Shift
+      </ion-button>
+    </section>
+
+    <!-- Shift Saat Ini -->
+    <ion-card class="shift-card active-shift">
+      <ion-card-header>
+        <ion-card-title>Shift Saat Ini</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="shift-current-content" role="group" aria-label="Status Shift Saat Ini">
+        <div class="shift-info">
+          <p><strong>Shift 2</strong> (14:00 - 22:00)</p>
+          <small>4 Juni 2025</small>
+          <p><strong>Petugas:</strong> Budi Santoso</p>
+        </div>
+         <ion-toggle checked="true" slot="end" aria-label="Status Shift Aktif"></ion-toggle>
+
+
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Daftar Jadwal Shift -->
+    <ion-card class="shift-card">
+      <ion-card-header>
+        <ion-card-subtitle>Jadwal Shift</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list lines="none">
+
+          <!-- Looping Shift -->
+          <ion-item class="shift-list-item" *ngFor="let shift of shifts">
+            <ion-label>
+              <h3>{{ shift.name }}</h3>
+              <p>{{ shift.startTime }} - {{ shift.endTime }}</p>
+              <p><strong>Petugas:</strong> {{ shift.petugas }}</p>
+            </ion-label>
+            <ion-button fill="clear" color="primary" size="small"
+              (click)="openEditShiftModal(shift.name, shift.startTime, shift.endTime, shift.petugas)"
+              [attr.aria-label]="'Edit Shift 1'">
+              Edit
+            </ion-button>
+          </ion-item>
+
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+</ion-content>

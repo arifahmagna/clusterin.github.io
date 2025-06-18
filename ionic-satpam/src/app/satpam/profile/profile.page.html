@@ -1,0 +1,53 @@
+
+
+  <ion-header>
+    <ion-toolbar  style="--min-height: 80px; --background: #26374D; --color: #ffffff;" class="minmal-toolbar">
+      <ion-title> Profle  </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+
+  <ion-content class="ion-padding">
+
+    <!-- kartu profile -->
+
+    <ion-card class="profile-card">
+      <ion-card-content class="ion-text-center">
+          <ion-toolbar class="toolbar-profile">
+          <ion-buttons slot="start">
+            <ion-avatar class="img-profile">
+              <img src="assets/profile.png" />
+            </ion-avatar>
+          </ion-buttons>
+
+           <ion-buttons slot="end">
+            <div class="upload-section">
+            <input type="file" id="fileUpload" style="display: none;" accept="image/*">
+            <ion-button expand="block" fill="outline" class="btn-upload" onclick="uploadFile()">Ganti Foto</ion-button>
+            <p class="upload-note">Ukuran foto maksimal 5MB</p>
+            </div>
+          </ion-buttons> 
+          
+        </ion-toolbar>
+
+        <div class="profile-info ion-text-start">
+          <p><strong>Nama Akun</strong><br>Delia Widianti</p>
+          <p><strong>NIK</strong><br>3215243567859</p>
+          <p><strong>Alamat Email</strong><br>Delia</p>
+          <p><strong>Alamat</strong><br>Karawang</p>
+          <p><strong>N0.Telp</strong><br>0897652234</p>
+          <p><strong>Status</strong><br>Satpam</p>
+          <p><strong>Password</strong><br>iiiiii</p>
+          <p><strong>Jenis Kelamin</strong><br>Belum dilengkapi</p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+       <ion-button expand="block" class="btn-info-next" [routerLink]="['edit-profile']">Edit</ion-button>
+
+  </ion-content>
+
+
+
+

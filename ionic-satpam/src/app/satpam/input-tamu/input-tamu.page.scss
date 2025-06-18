@@ -1,0 +1,103 @@
+
+/* Styling untuk header */
+ion-header {
+  --background: #1d4e89; /* Warna latar belakang header */
+}
+
+ion-toolbar {
+  --background: transparent; /* Membuat toolbar transparan */
+}
+
+ion-title {
+  color: #ffffff; /* Warna teks judul */
+  font-weight: bold; /* Menebalkan teks judul */
+}
+
+/* Styling untuk konten */
+.form-wrapper {
+  padding: 1rem; /* Padding untuk konten */
+}
+
+/* Judul form */
+.text-title {
+  font-size: 1.2rem; /* Ukuran font judul */
+  font-weight: bold; /* Menebalkan teks judul */
+  color: #26374D; /* Warna teks judul */
+  margin-bottom: 1rem; /* Jarak bawah */
+  text-align: center; /* Rata tengah */
+}
+
+/* Styling untuk kartu tamu */
+.tamu-card {
+  border-radius: 12px; /* Sudut melengkung */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Bayangan */
+  padding: 1.5rem; /* Padding dalam kartu */
+  background-color: #dde6ed; ; 
+  border: 1px solid #d1d5db;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Label untuk input */
+label {
+  font-weight: 600; /* Menebalkan teks label */
+  color:  #536d82;  /* Warna teks label */
+  margin-top: 1rem; /* Jarak atas */
+}
+
+/* Styling untuk input */
+ion-input {
+  margin-top: 0.5rem; /* Jarak atas input */
+  --padding-start: 1rem; /* Padding kiri */
+  --padding-end: 1rem; /* Padding kanan */
+  --border-radius: 8px; /* Sudut melengkung input */
+  --background: #f9fafb; /* Warna latar belakang input */
+  --border-color:   #9db2bf;  /* Warna border input */
+  --color : #26374d;
+}
+
+/* Styling untuk tombol submit */
+.submit-btn {
+  margin-top: 1.5rem; /* Jarak atas tombol */
+  --background:  #536D82; /* Warna latar belakang tombol */
+  --color: #ffffff; /* Warna teks tombol */
+  --border-radius: 8px; /* Sudut melengkung tombol */
+  font-weight: bold; /* Menebalkan teks tombol */
+  transition: background-color 0.3s ease; /* Transisi warna latar belakang */
+}
+
+.submit-btn:hover {
+  --background: #1a3e6b; /* Warna latar belakang saat hover */
+.submit-btn:focus {
+  background: linear-gradient(90deg, #536d82 0%, #26374d 100%);
+  outline: none;
+}
+}
+
+/* Styling untuk label section */
+.section-label {
+  font-size: 1.0rem; /* Ukuran font untuk label section */
+  font-weight: bold; /* Menebalkan teks label section */
+  color: #26374d;/* Warna teks label section */
+  margin-top: 0.2rem; /* Jarak atas */
+  margin-bottom: 0.5rem; /* Jarak bawah */
+}
+
+
+.minmal-toolbar {
+    --min-height: 90px;
+    --background: linear-gradient(135deg, #26374D, #1F2A40);
+    --color: #ffffff;
+    font-weight: bold;
+     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0px 0px 5px 5px;
+}
+
+ion-title {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+     margin-top: 1rem;
+}
+
+

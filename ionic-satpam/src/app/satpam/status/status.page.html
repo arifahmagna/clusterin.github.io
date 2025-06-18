@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar style="--min-height: 80px; --background: #26374D; --color: #ffffff;">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/tabs/home">
+        <ion-icon name="chevron-back-circle-outline" slot="icon-only" class="back-icon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Update Status Tamu</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <!-- Searchbar -->
+  <ion-searchbar placeholder="Cari Nama..." class="custom-searchbar"></ion-searchbar>
+
+  <!-- Statistik Monitoring -->
+   
+ <div class="statistik-section"> 
+    <div class="statistik-text">Statistik Monitoring Tamu</div>
+    <small class="statistik-p">Update tamu terakhir: Sabtu 10 Mei 2025</small>
+  </div>
+
+  <!-- Ringkasan Jumlah Tamu -->
+  <div class="card summary">
+    <div>
+      <h2>2</h2>
+      <p>Tamu Masuk</p>
+    </div>
+    <div>
+      <h2>2</h2>
+      <p>Tamu Keluar</p>
+    </div>
+  </div>
+
+  <!-- Tab Pilihan: Masuk / Keluar -->
+
+  <ion-segment [(ngModel)]="tab" value="masuk">
+  <ion-segment-button value="masuk">
+    <ion-label>Tamu Masuk</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="keluar">
+    <ion-label>Tamu Keluar</ion-label>
+  </ion-segment-button>
+</ion-segment>
+
+
+
+  <!-- Komponen berdasarkan tab -->
+  <app-masuk *ngIf="tab === 'masuk'"></app-masuk>
+  <app-keluar *ngIf="tab === 'keluar'"></app-keluar>
+</ion-content>
