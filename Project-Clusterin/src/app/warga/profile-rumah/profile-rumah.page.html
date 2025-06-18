@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar">
+    <ion-title class="ion-text-center white-font">Profil Rumah</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2 class="section-title">Identitas & Data Penghuni</h2>
+
+  <div class="card-profile">
+    <!-- FOTO RUMAH -->
+    <div class="photo-wrapper">
+      <img [src]="data.foto" alt="Foto Rumah" class="rumah-photo" />
+      <ion-button *ngIf="editMode" size="small" (click)="fileInput.click()" class="btn-ganti-foto">
+        Ganti Foto
+      </ion-button>
+      <input type="file" accept="image/*" hidden #fileInput (change)="onFileSelected($event)">
+    </div>
+
+
+    <div class="info-text">
+      <div class="info-item">
+        <label>Nomor Rumah</label>
+        <div class="value-row">
+          <ion-input class="custom-background" *ngIf="editMode" [(ngModel)]="data.nomorRumah"></ion-input>
+          <span *ngIf="!editMode">{{ data.nomorRumah }}</span>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <label>Alamat</label>
+        <div class="value-row">
+          <ion-textarea class="custom-background" class="custom-background" *ngIf="editMode"
+            [(ngModel)]="data.alamat"></ion-textarea>
+          <span *ngIf="!editMode">{{ data.alamat }}</span>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <label>Cluster</label>
+        <div class="value-row">
+          <ion-input class="custom-background" *ngIf="editMode" [(ngModel)]="data.cluster"></ion-input>
+          <span *ngIf="!editMode">{{ data.cluster }}</span>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <label>Status Kepemilikan</label>
+        <div class="value-row">
+          <ion-select class="custom-background" *ngIf="editMode" [(ngModel)]="data.statusKepemilikan">
+            <ion-select-option value="Milik Sendiri">Milik Sendiri</ion-select-option>
+            <ion-select-option value="Sewa">Sewa</ion-select-option>
+          </ion-select>
+          <span *ngIf="!editMode">{{ data.statusKepemilikan }}</span>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <label>Jumlah Penghuni</label>
+        <div class="value-row">
+          <ion-input class="custom-background" *ngIf="editMode" type="number"
+            [(ngModel)]="data.jumlahPenghuni"></ion-input>
+          <span *ngIf="!editMode">{{ data.jumlahPenghuni }}</span>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <label>Nama Penghuni</label>
+        <div class="value-row">
+          <ion-textarea class="custom-background" *ngIf="editMode" [(ngModel)]="data.namaPenghuni"></ion-textarea>
+          <span *ngIf="!editMode">{{ data.namaPenghuni }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ion-button expand="block" fill="outline" (click)="toggleEdit()">
+    {{ editMode ? 'Simpan' : 'Edit' }}
+  </ion-button>
+
+  <ion-button expand="block" fill="clear" (click)="kembali()" color="medium">
+    Kembali
+  </ion-button>
+</ion-content>
+
+<!-- Modal sukses diganti dengan div biasa -->
+<div *ngIf="showSuccessModal" class="overlay">
+  <div class="success-container">
+    <ion-icon name="checkmark-circle" class="success-icon"></ion-icon>
+
+    <h2 class="success-title">Perubahan Profil Rumah<br><b>Berhasil</b></h2>
+    <p class="success-text">Perubahan informasi rumah anda berhasil dilakukan.</p>
+
+    <ion-button expand="block" class="btn-primary" (click)="kembaliKeProfil()">Kembali ke Profil Saya</ion-button>
+    <ion-button fill="clear" class="btn-secondary" (click)="kembaliKeBeranda()">Kembali ke Beranda</ion-button>
+  </div>
+</div>

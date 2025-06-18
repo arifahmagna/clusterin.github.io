@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Edit Shift</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-item>
+    <ion-label position="stacked">Nama Shift</ion-label>
+    <ion-input [(ngModel)]="shiftData.name" placeholder="Masukkan Nama Shift"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Petugas</ion-label>
+    <ion-input [(ngModel)]="shiftData.petugas" placeholder="Nama Petugas"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Tanggal Mulai</ion-label>
+    <ion-input type="date" [(ngModel)]="shiftData.startDate"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Tanggal Selesai</ion-label>
+    <ion-input type="date" [(ngModel)]="shiftData.endDate"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Waktu Mulai</ion-label>
+    <ion-input type="time" [(ngModel)]="shiftData.startTime"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Waktu Selesai</ion-label>
+    <ion-input type="time" [(ngModel)]="shiftData.endTime"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Lokasi Penugasan</ion-label>
+    <ion-input [(ngModel)]="shiftData.location" placeholder="Masukkan Lokasi"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Catatan</ion-label>
+    <ion-textarea [(ngModel)]="shiftData.notes" placeholder="Catatan Tambahan"></ion-textarea>
+  </ion-item>
+
+  <ion-button expand="block" (click)="updateShift()">Simpan Perubahan</ion-button>
+  <ion-button expand="block" (click)="cancel()" color="medium">Batal</ion-button>
+
+</ion-content>

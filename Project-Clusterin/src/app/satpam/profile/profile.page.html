@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar style="--min-height: 80px; --background: #26374D; --color: #ffffff;" class="minimal-toolbar">
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-card class="profile-info-card">
+    <ion-card-content>
+        <h3>Informasi Akun</h3>
+      
+      <!-- Bagian Foto Profil -->
+      <div class="profile-picture">
+        <img src="assets/profile.png" alt="Foto Profil" />
+      </div>
+      <ion-button fill="outline">Ganti Foto</ion-button>
+      <p>Ukuran foto maksimal 5MB</p>
+
+      <!-- Informasi Akun -->
+      <ion-list>
+        <ion-item>
+          <ion-label>Nama Akun</ion-label>
+          <ion-text>Delia Widlanti</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>NIK</ion-label>
+          <ion-text>321525408976547</ion-text>
+        </ion-item>
+              <ion-item lines="none">
+        <ion-label>Email</ion-label>
+        <div class="email-verifikasi-wrapper">
+          <ion-text>Deliawidi1876&#64;gmail.com</ion-text>
+          <ion-badge color="success">Sudah Terverifikasi</ion-badge>
+        </div>
+      </ion-item>
+
+        <ion-item>
+          <ion-label>No. Handphone</ion-label>
+          <ion-text>08976543627</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Alamat</ion-label>
+          <ion-text>Karang Pawitan Rt 001/008 Des. Wadas Kec. Karawang Barat</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Status</ion-label>
+          <ion-text>Satpam</ion-text>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Card untuk buka modal Informasi Pribadi -->
+  <ion-card class="clickable-card" (click)="openInformasiPribadiModal()">
+    <ion-item>
+      <ion-icon name="person-circle-outline" slot="start"></ion-icon>
+      <ion-label>Informasi Pribadi</ion-label>
+      <ion-badge color="warning">Belum dilengkapi</ion-badge>
+      <!-- <ion-button fill="clear" slot="end">&gt;</ion-button> -->
+    </ion-item>
+  </ion-card>
+</ion-content>

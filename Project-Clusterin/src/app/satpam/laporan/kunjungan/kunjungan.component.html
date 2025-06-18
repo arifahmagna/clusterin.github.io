@@ -1,0 +1,58 @@
+ <ion-card-header>
+    <ion-card-title class="laporan-title">Laporan Kunjungan Tamu</ion-card-title>
+    <ion-card-subtitle class="laporan-tanggal">Tanggal: 13 Juni 2025</ion-card-subtitle>
+  </ion-card-header>
+
+<div class="filter-container">
+  <input type="text" placeholder="Cari nama tamu..." [(ngModel)]="searchTerm" class="form-control" />
+  <input type="date" [(ngModel)]="selectedDate" class="form-control mt-2" />
+</div>
+
+<div class="judul-kunjungan">
+  <h3>Kunjungan Tamu</h3> 
+  <p>Jumlah Tamu: 2</p>
+</div>
+
+<div class="list-group mt-4">
+  <ion-card class="card-kunjungan">
+    <!-- Semua kartu tamu -->
+    <div *ngFor="let tamu of filteredTamu; let i = index">
+      <ion-card (click)="toggleCard(i)">
+        <ion-item lines="none">
+          <ion-label>
+            <h2>
+              {{ tamu.nama }} --
+              <span 
+                [ngClass]="{
+                  'status-checkin': tamu.status === 'check-in',
+                  'status-checkout': tamu.status === 'check-out'
+                }">
+                {{ tamu.status === 'check-in' ? 'Check-in' : 'Check-Out' }}
+              </span>
+            </h2>
+            <h3>02 Mei 2025</h3>
+            <p *ngIf="openedIndex === i">
+              <strong>Jam Masuk:</strong> {{ tamu.waktuMasuk }}<br>
+              <strong>Jam Keluar:</strong> {{ tamu.waktuKeluar }}<br>
+              <strong>Alamat:</strong> {{ tamu.alamat }}<br>
+              <strong>Tujuan:</strong> {{ tamu.tujuan }}<br>
+              <strong>Alamat Tujuan:</strong> {{ tamu.alamatTujuan }}<br>
+              <strong>Estimasi:</strong> {{ tamu.estimasi }}<br>
+              <strong>Keterangan:</strong> {{ tamu.keterangan }}
+            </p>
+          </ion-label>
+        </ion-item>
+      </ion-card>
+    </div>
+
+    <!-- Tombol di dalam card utama -->
+    <div class="tombol-container text-center mt-3">
+      <p *ngIf="!semuaDitampilkan" (click)="tampilkanSemua()" class="tombol-teks">
+        Tampilkan Semua
+      </p>
+      <p *ngIf="semuaDitampilkan" (click)="sembunyikanSebagian()" class="tombol-teks">
+        Tampilkan Sebagian
+      </p>
+    </div>
+  </ion-card>
+</div>

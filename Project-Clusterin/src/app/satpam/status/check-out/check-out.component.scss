@@ -1,0 +1,60 @@
+ion-card {
+  margin: 8px; /* Jarak antara kartu */
+  border-radius: 12px; /* Sudut melengkung */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek kedalaman */
+  background-color: #ffffff; /* Warna latar belakang kartu */
+}
+
+ion-card-header {
+  background-color: #9DB2BF; /* Warna latar belakang header */
+  color: #ffffff; /* Warna teks header */
+  padding: 8px; /* Mengurangi padding di dalam header */
+  border-top-left-radius: 12px; /* Sudut melengkung di kiri atas */
+  border-top-right-radius: 12px; /* Sudut melengkung di kanan atas */
+}
+
+ion-card-title {
+  font-size: 15px; /* Ukuran font untuk judul */
+  font-weight: bold; /* Menebalkan font judul */
+  margin: 0; /* Menghapus margin default */
+  color: white;
+}
+
+ion-card-content {
+  padding: 4px; /* Mengurangi padding di dalam konten */
+}
+
+ion-list {
+  margin: 0; /* Menghapus margin default */
+}
+
+ion-item {
+  --background: transparent; /* Menghilangkan latar belakang item */
+  border-bottom: none; /* Menghilangkan garis bawah item */
+  padding: 0; /* Menghapus padding untuk mengurangi jarak */
+}
+
+ion-label {
+  padding: 0; /* Menghapus padding pada label */
+}
+
+ion-label p {
+  margin: 2px 0; /* Mengurangi jarak antar paragraf */
+  color: #333; /* Warna teks */
+}
+
+ion-label strong {
+  color: #333; /* Warna teks untuk label tebal */
+}
+
+ion-button[disabled] {
+  --background: #E0E0E0; /* Abu-abu muda, memberi kesan tidak aktif */
+  --color: #9E9E9E;      /* Teks agak pudar */
+  font-weight: 600;
+  font-size: 12px;
+  border-radius: 14px;
+  opacity: 0.8;
+  box-shadow: none;
+ 
+  cursor: not-allowed;
+}
