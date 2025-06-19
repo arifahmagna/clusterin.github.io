@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profile: Informasi Rumah</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+</head>
+
+<body>
+
+  <!-- View Mode -->
+  <div id="view-mode">
+    <div class="container text-center pt-1 pb-2"
+      style="background: var(--biruBG1); font-weight: var(--fwbold); font-size: 24px; border-radius: 0 0 10px 10px;">
+      <div class="row align-items-center justify-content-center mt-3">Informasi Rumah</div>
+    </div>
+
+    <div class="container mb-2 pb-2 mt-4">
+      <div class="card" style="background: white; color: #26374D">
+        <div class="card-body">
+          <div class="header-3 mb-3" style="font-weight: var(--fwbold);">Identitas Rumah</div>
+          <div class="d-flex justify-content-center mb-4">
+            <img id="viewFoto" src="asset/images/foto-rumah-sample.jpg" alt="Foto Rumah"
+              class="img-fluid rounded shadow-sm" style="max-width: 300px; height: auto; border: 1px solid #ccc;">
+          </div>
+          <div class="mb-2 row">
+            <label class="col-sm-3 col-form-label">Nomor Rumah</label>
+            <div class="col-sm-9">
+              <input type="text" id="viewNomorRumah" readonly class="form-control-plaintext" value="A12">
+            </div>
+          </div>
+          <div class="mb-2 row">
+            <label class="col-sm-3 col-form-label">Alamat Lengkap</label>
+            <div class="col-sm-9">
+              <input type="text" id="viewAlamat" readonly class="form-control-plaintext"
+                value="Jalan Melati No.12, Karaba Indah">
+            </div>
+          </div>
+          <div class="mb-2 row">
+            <label class="col-sm-3 col-form-label">Cluster</label>
+            <div class="col-sm-9">
+              <input type="text" id="viewCluster" readonly class="form-control-plaintext" value="Cluster Mawar">
+            </div>
+          </div>
+          <div class="mb-2 row">
+            <label class="col-sm-3 col-form-label">Status Kepemilikan</label>
+            <div class="col-sm-9">
+              <input type="text" id="viewStatus" readonly class="form-control-plaintext" value="Milik Sendiri">
+            </div>
+          </div>
+          <div class="mb-2 row">
+            <label class="col-sm-3 col-form-label">Jumlah Penghuni</label>
+            <div class="col-sm-9">
+              <input type="text" id="viewJumlah" readonly class="form-control-plaintext" value="4 Orang">
+            </div>
+          </div>
+          <div class="mb-2 row">
+            <label class="col-sm-3 col-form-label">Nama Penghuni</label>
+            <div class="col-sm-9">
+              <input type="text" id="viewNama" readonly class="form-control-plaintext"
+                value="Arifah Magna Saidah, Fulan, Fulana, Anak">
+            </div>
+          </div>
+        </div>
+      </div>
+      <button onclick="showEdit()" class="btn btn-edit mb-3 mt-5">Edit</button>
+      <a href="profile.html" style="text-decoration: none; color: inherit;">
+        <button class="btn btn-edit mb-3" style="background-color: transparent !important;">Kembali</button>
+      </a>
+    </div>
+  </div>
+
+  <!-- Edit Mode -->
+  <div id="edit-mode" style="display: none;">
+    <div class="container text-center pt-1 pb-2"
+      style="background: var(--biruBG1); font-weight: var(--fwbold); font-size: 24px; border-radius: 0 0 10px 10px;">
+      <div class="row align-items-center justify-content-center mt-3">Edit Informasi Rumah</div>
+    </div>
+
+    <div class="container mb-2 pb-2 mt-4">
+      <div class="card" style="background: white; color: #26374D">
+        <div class="card-body">
+          <div class="header-3 mb-3" style="font-weight: var(--fwbold);">Formulir Edit Rumah</div>
+          <div class="text-center mb-4">
+            <label for="fotoRumahInput" style="cursor: pointer;">
+              <img id="fotoPreview" src="asset/images/foto-rumah-sample.jpg" alt="Foto Rumah"
+                class="img-fluid rounded shadow-sm" style="max-width: 280px; height: auto; border: 1px solid #ccc;">
+            </label>
+            <input type="file" accept="image/*" id="fotoRumahInput" class="form-control d-none"
+              onchange="previewFotoRumah()">
+            <div class="mt-2" style="font-size: 13px; color: #6c757d;">Klik gambar untuk mengganti foto</div>
+          </div>
+
+          <div class="mb-2 row">
+            <label class="col-sm-3 col-form-label">Nomor Rumah</label>
+            <div class="col-sm-9">
+              <input type="text" id="editNomorRumah" class="form-control" value="A12">
+            </div>
+          </div>
+          <div class="mb-2 row">
+            <label class="col-sm-3 col-form-label">Alamat Lengkap</label>
+            <div class="col-sm-9">
+              <input type="text" id="editAlamat" class="form-control" value="Jalan Melati No.12, Karaba Indah">
+            </div>
+          </div>
+          <div class="mb-2 row">
+            <label class="col-sm-3 col-form-label">Cluster</label>
+            <div class="col-sm-9">
+              <input type="text" id="editCluster" class="form-control" value="Cluster Mawar">
+            </div>
+          </div>
+          <div class="mb-2 row">
+            <label class="col-sm-3 col-form-label">Status Kepemilikan</label>
+            <div class="col-sm-9">
+              <select id="editStatus" class="form-select">
+                <option selected>Milik Sendiri</option>
+                <option>Kontrak</option>
+                <option>Sewa</option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-2 row">
+            <label class="col-sm-3 col-form-label">Jumlah Penghuni</label>
+            <div class="col-sm-9">
+              <input type="number" id="editJumlah" class="form-control" value="4">
+            </div>
+          </div>
+          <div class="mb-2 row">
+            <label class="col-sm-3 col-form-label">Nama Penghuni</label>
+            <div class="col-sm-9">
+              <input type="text" id="editNama" class="form-control" value="Arifah Magna Saidah, Fulan, Fulana, Anak">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" onclick="saveEdit()" class="btn btn-edit mb-3 mt-5" data-bs-toggle="modal"
+        data-bs-target="#modalEditSuccess">Simpan</button>
+      <button onclick="cancelEdit()" class="btn btn-edit mb-3"
+        style="background-color: transparent !important;">Batal</button>
+        <div class="modal fade" id="modalEditSuccess" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="container pb-2">
+          <div class="d-flex align-items-center justify-content-center" style="font-size: 6rem; color: var(--biruBG1);">
+            <i class="bi bi-check-circle-fill text-center"></i>
+          </div>
+          <div class="d-flex flex-column justify-content-center align-items-center">
+            <h5 class="modal-title text-center mb-3"
+              style="color: var(--biruBG1); font-weight: var(--fwbold); font-size: 29px; font-family: Poppins, sans-serif;">
+              Berhasil</h5>
+            <p>Perubahan informasi informasi rumah anda berhasil dilakukan.</p>
+          </div>
+
+          <div class="d-grid gap-2 mt-4 mx-3 mb-3 text-center">
+            <a href="profile.html">
+              <button type="button" class="btn btn-yes">Kembali ke profil</button>
+            </a>
+            <a href="dashboard.html">
+              <button type="button" class="btn btn-no">Kembali ke beranda</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+  </div>
+
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function showEdit() {
+      document.getElementById('view-mode').style.display = 'none';
+      document.getElementById('edit-mode').style.display = 'block';
+    }
+
+    function cancelEdit() {
+      document.getElementById('edit-mode').style.display = 'none';
+      document.getElementById('view-mode').style.display = 'block';
+    }
+
+    function previewFotoRumah() {
+      const input = document.getElementById('fotoRumahInput');
+      const preview = document.getElementById('fotoPreview');
+      const file = input.files[0];
+
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          preview.src = e.target.result;
+        }
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function saveEdit() {
+
+  document.getElementById('viewNomorRumah').value = document.getElementById('editNomorRumah').value;
+  document.getElementById('viewAlamat').value = document.getElementById('editAlamat').value;
+  document.getElementById('viewCluster').value = document.getElementById('editCluster').value;
+  document.getElementById('viewStatus').value = document.getElementById('editStatus').value;
+  document.getElementById('viewJumlah').value = document.getElementById('editJumlah').value + " Orang";
+  document.getElementById('viewNama').value = document.getElementById('editNama').value;
+  document.getElementById('viewFoto').src = document.getElementById('fotoPreview').src;
+
+
+  const modal = new bootstrap.Modal(document.getElementById('modalEditSuccess'));
+  modal.show();
+}
+
+  </script>
+</body>
+
+</html>
