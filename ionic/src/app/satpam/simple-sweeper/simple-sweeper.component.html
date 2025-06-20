@@ -1,0 +1,20 @@
+<!-- <div class="sweeper-container">
+  <div class="slide" *ngFor="let slide of slides; let i = index" [class.active]="i === currentIndex">
+    <h2>{{ slide.title }}</h2>
+    <p>{{ slide.subtitle }}</p>
+  </div>
+  <button (click)="prevSlide()" class="nav-button">❮</button>
+  <button (click)="nextSlide()" class="nav-button">❯</button>
+  <div class="dots">
+    <span *ngFor="let slide of slides; let i = index" (click)="selectSlide(i)" [class.active]="i === currentIndex"></span>
+  </div>
+</div>-->
+ 
+ <div class="slide" *ngFor="let slide of slides; let i = index" [class.active]="i === currentIndex">
+  <img [src]="slide.image" alt="Sweeper Image" class="sweeper-image">
+</div>
+<button (click)="prevSlide()" class="nav-button">&lt;</button>
+<button (click)="nextSlide()" class="nav-button">&gt;</button>
+<div class="dots">
+  <span *ngFor="let slide of slides; let i = index" (click)="selectSlide(i)" [class.active]="i === currentIndex"></span>
+</div>  
